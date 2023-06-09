@@ -1,7 +1,7 @@
 name = "CommonRLInterface"
 uuid = "d842c3ba-07a1-494f-bbec-f5741b0a3e98"
-authors = ["Zachary Sunberg <sunbergzach@gmail.com> and contributors"]
-version = "0.3.2"
+authors = ["Zachary Sunberg <zachary.sunberg@colorado.edu> and contributors"]
+version = "0.3.3"
 
 [deps]
 Tricks = "410a4b4d-49e4-4fbc-ab6d-cb71b17b3775"
@@ -15,6 +15,7 @@ ColorSchemes = "35d6a980-a343-548e-a6ea-1d62b119f2f4"
 Compose = "a81c6b42-2e10-5240-aca2-a61377ecd94b"
 StaticArrays = "90137ffa-7385-5640-81b9-e52037218182"
 Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
 
 [targets]
-test = ["Test", "ColorSchemes", "Compose", "StaticArrays"]
+test = ["Test", "ColorSchemes", "Compose", "StaticArrays", "Documenter"]
