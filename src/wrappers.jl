@@ -53,7 +53,7 @@ function wrapped_env end
 
 Return the environment underneath all layers of wrappers.
 
-See also [wrapped_env`](@ref).
+See also [`wrapped_env`](@ref).
 """
 unwrapped(env::AbstractWrapper) = unwrapped(wrapped_env(env))
 unwrapped(env::AbstractEnv) = env

@@ -69,6 +69,7 @@ _call(other, args...) = other
 @quick_forward CommonRLInterface.render
 @quick_forward CommonRLInterface.state
 @quick_forward CommonRLInterface.setstate!
+@quick_forward CommonRLInterface.truncated
 @quick_forward CommonRLInterface.valid_actions
 @quick_forward CommonRLInterface.valid_action_mask
 @quick_forward CommonRLInterface.observations

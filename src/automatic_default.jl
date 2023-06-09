@@ -86,6 +86,14 @@ render = RL.render
 state = RL.state
 setstate! = RL.setstate!
 
+function truncated(env)
+    if provided(RL.truncated, env)
+        return RL.truncated(env)
+    else
+        return false
+    end
+end
+
 # Spaces
 
 observations = RL.observations

@@ -151,6 +151,13 @@ end
     @test state(env1) == 1
 
     @test !provided(UtilityStyle, MyEnv(0))
+
+    CommonRLInterface.truncated(env::MyEnv) = env.state > 4
+    @test provided(truncated, MyEnv(1))
+    setstate!(env1, 4)
+    @test truncated(env1) == false
+    setstate!(env1, 5)
+    @test truncated(env1) == true
 end
 
 @testset "spaces" begin

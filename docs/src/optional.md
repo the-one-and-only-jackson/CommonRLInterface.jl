@@ -25,6 +25,7 @@ The optional interface currently contains the following functions:
 - [`render`](@ref)
 - [`state`](@ref)
 - [`setstate!`](@ref)
+- [`truncated`](@ref)
 - [`valid_actions`](@ref)
 - [`valid_action_mask`](@ref)
 - [`observations`](@ref)
@@ -41,6 +42,7 @@ clone
 render
 state
 setstate!
+truncated
 valid_actions
 valid_action_mask
 observations

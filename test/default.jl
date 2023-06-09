@@ -16,6 +16,7 @@
     @test D.players(env) == 1
     @test D.player(env) == 1
     @test D.UtilityStyle(env) == GeneralSum()
+    @test D.truncated(env) == false
 
     struct DefaultActionMaskTestEnv <: AbstractEnv
         state::Int

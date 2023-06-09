@@ -48,12 +48,14 @@
         @test !provided(observations, w)
         @test !provided(valid_actions, w)
         @test !provided(clone, w)
+        @test !provided(truncated, w)
 
         # static object keyword arg
         w2 = QuickWrapper(env;
                           valid_actions = env->filter(!=(0), actions(env)),
                           observations = 1:10,
-                          clone = deepcopy
+                          clone = deepcopy,
+                          truncated = env ->  env.state > 2
                          )
 
         @test provided(observations, w2)
@@ -63,6 +65,7 @@
         @test provided(clone, w2)
         @test clone(w2) isa QuickWrapper
         @test state(clone(w2)) == state(env)
+        @test truncated(w2) == (env.state > 2)
 
         w3 = QuickWrapper(env)
         CommonRLInterface.clone(env::WrapperTestEnv) = WrapperTestEnv(env.state)

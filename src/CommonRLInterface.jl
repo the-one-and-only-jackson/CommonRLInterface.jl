@@ -83,9 +83,11 @@ function act! end
 """
     terminated(env::AbstractEnv)
 
-Determine whether an environment has finished executing.
+Determine whether an environment has finished executing due to reaching a terminal state.
 
 If `terminated(env)` is true, no further actions should be taken and it is safe to assume that no further rewards will be received.
+
+See also: [`truncated`](@ref).
 """
 function terminated end
 
@@ -117,7 +119,8 @@ export
     clone,
     render,
     state,
-    setstate!
+    setstate!,
+    truncated
 include("environment.jl")
 
 export

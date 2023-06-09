@@ -45,3 +45,20 @@ Set the state of the environment to s.
 If two environments have the same state, future outputs (observations and rewards) should be statistically identical given the same sequence of actions.
 """
 function setstate! end
+
+"""
+    truncated(env::AbstractEnv)
+
+Determine whether an environment has finished executing for reasons outside of reaching a 
+terminal state as indicated by `terminated`. 
+
+If `truncated(env)` is true, further actions may still be taken. Truncation is used to 
+indicate that the environment should be reset prior to reaching a terminal state, typically 
+during training.
+
+A truncation indicator is necessary for proper handling of value bootstrapping in many 
+reinforcement learning algorithms. A common application of truncation is for handling time 
+limits not inherent to the environment. The [`AutomaticDefault`](@ref) module provides 
+`truncated(env) = false`.
+"""
+function truncated end
